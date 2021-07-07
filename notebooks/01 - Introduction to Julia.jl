@@ -314,10 +314,24 @@ We didn't do this above, since Julia doesn't require it, but it's easier to unde
 # ╔═╡ 6859d214-8195-48e9-95e7-313755e4fa19
 (3 < 4) || (8 == 12)
 
+# ╔═╡ b3797a46-aeaf-45e5-9573-be2c73cd7a78
+md"""
+## Package management
+
+Sometimes you might need functionality that does not exist in base Julia. Julia handles packages using the [`Pkg` package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/). After finding a package which has the functions that you need, you have two options:
+
+1. Use the package management prompt in the Julia REPL (the standard Julia interface; what you get when you type `julia` in your terminal). Enter this by typing `]` at the standard green Julia prompt `julia>`. This will become a blue `pkg>`. You can then download and install new packages using `add packagename`. 
+2. From the standard prompt, enter `Pkg.add(packagename)`.
+
+The `packagename` package can then be used by adding `using packagename` to the start of the script.
+
+Pluto actually simplifies this! It will automatically download and install `packagename` when `using packagename` is run in a cell.
+"""
+
 # ╔═╡ Cell order:
 # ╠═2ca040d9-9f67-4f35-9c9b-213969487997
-# ╠═b8922cbc-de96-11eb-0713-b96ba045d21a
-# ╠═e250bbe8-5345-4031-9619-a7d46d939202
+# ╟─b8922cbc-de96-11eb-0713-b96ba045d21a
+# ╟─e250bbe8-5345-4031-9619-a7d46d939202
 # ╟─a5175526-fab3-4f6e-9ed5-7d3eaabdc6b4
 # ╠═5417beae-f1e8-436e-aec9-6e22cd43ccbd
 # ╠═e069a639-1836-4ea7-8aa0-8f9d6eb655cb
@@ -340,7 +354,7 @@ We didn't do this above, since Julia doesn't require it, but it's easier to unde
 # ╠═5e10e97d-263b-4239-a436-dd8e5e68318b
 # ╠═9f89f415-4935-4a52-9bdb-bb5f7ac99dcd
 # ╠═bcbfd316-937e-4fc3-b798-677059460247
-# ╠═6c89818b-9fb3-4b41-a6e1-69a0391df67d
+# ╟─6c89818b-9fb3-4b41-a6e1-69a0391df67d
 # ╠═d2bc8b3f-493b-4c20-bb5f-edda5dbc6eec
 # ╠═ca004cf3-0496-41f8-b64f-b728e2169307
 # ╟─260f132c-1375-4519-b96a-6a45b22f060b
@@ -376,3 +390,4 @@ We didn't do this above, since Julia doesn't require it, but it's easier to unde
 # ╠═685d48e5-a579-43cc-9949-b40477e0f804
 # ╟─c7428de8-3446-41be-acc7-a9fae46e6365
 # ╠═6859d214-8195-48e9-95e7-313755e4fa19
+# ╟─b3797a46-aeaf-45e5-9573-be2c73cd7a78
