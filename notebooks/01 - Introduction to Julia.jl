@@ -4,17 +4,6 @@
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ 2ca040d9-9f67-4f35-9c9b-213969487997
-# edit the code below to set your name and ID (your email without @cornell.edu)
-
-student = (name = "Jazzy Doe", cornell_id = "jd999")
-
-# press the ▶ button in the bottom right of this cell to run your edits
-# or use Shift+Enter
-
-# you might need to wait until all other cells in this notebook have completed running.
-# scroll down the page to see what's up
-
 # ╔═╡ b8922cbc-de96-11eb-0713-b96ba045d21a
 md"""
 # Notebook 0: Introduction to Julia
@@ -492,6 +481,36 @@ end
 # ╔═╡ 48b742b3-d3fa-4c0d-9f48-bcd082588b68
 function_of_functions(g, 3, 5)
 
+# ╔═╡ d41b6712-b8ec-48dc-bda4-fbaa04899dcb
+md"""
+### Optional arguments
+
+There are two extremes with regard to function parameters which do not always need to be changed. The first is to hard-code them into the function body, which has a clear downside: when you do want to change them, the function needs to be edited directly. The other extreme is to treat them as regular arguments, passing them every time the function is called. This has the downside of potentially creating bloated function calls, particularly when there is a standard default value that makes sense for most function evaluations.
+
+Most modern languages, including Julia, allow an alternate solution, which is to make these arguments *optional*. This involves setting a default value, which is used unless the argument is explicitly defined in a function call.
+"""
+
+# ╔═╡ 8f56b12a-73f0-494a-8c88-92bed2c30b43
+function setting_optional_arguments(x, y, c=0.5)
+	return c * (x + y)
+end
+
+# ╔═╡ ea8dd689-367b-42fc-95bc-db3a5e92f835
+md"""
+If we want to stick with the fixed value $c=0.5$, all we have to do is call `setting_optional_arguments` with the `x` and `y` arguments.
+"""
+
+# ╔═╡ 0d41f103-fe98-4772-a74f-ffe6d93c0b0c
+setting_optional_arguments(3, 5)
+
+# ╔═╡ d5b56a3a-03b0-483e-82cc-51acc15cefe7
+md"""
+Otherwise, we can pass a new value for `c`.
+"""
+
+# ╔═╡ e31af3dc-f002-4ec2-a297-d1526ec77257
+setting_optional_arguments(3, 5, 2)
+
 # ╔═╡ 8425452e-3f74-4f9b-b37c-cf75dfe0b4fb
 md"""
 ## Returning multiple values
@@ -789,7 +808,6 @@ Pluto actually simplifies this! It will automatically download and install `pack
 """
 
 # ╔═╡ Cell order:
-# ╠═2ca040d9-9f67-4f35-9c9b-213969487997
 # ╟─b8922cbc-de96-11eb-0713-b96ba045d21a
 # ╟─e250bbe8-5345-4031-9619-a7d46d939202
 # ╟─61c5e9e3-33d0-4210-9dc7-ff5a97c263de
@@ -894,6 +912,12 @@ Pluto actually simplifies this! It will automatically download and install `pack
 # ╠═32c25b91-c07f-4bd5-aeb1-618b4074b3f1
 # ╠═e0c707e9-3a3f-4550-a96f-f8d7f8ac3034
 # ╠═48b742b3-d3fa-4c0d-9f48-bcd082588b68
+# ╟─d41b6712-b8ec-48dc-bda4-fbaa04899dcb
+# ╠═8f56b12a-73f0-494a-8c88-92bed2c30b43
+# ╟─ea8dd689-367b-42fc-95bc-db3a5e92f835
+# ╠═0d41f103-fe98-4772-a74f-ffe6d93c0b0c
+# ╟─d5b56a3a-03b0-483e-82cc-51acc15cefe7
+# ╠═e31af3dc-f002-4ec2-a297-d1526ec77257
 # ╟─8425452e-3f74-4f9b-b37c-cf75dfe0b4fb
 # ╠═1f4ee34f-6c79-4fa0-b956-411713a2e2e7
 # ╠═2afc55e3-af2a-4d5a-933a-2c6fb786cac3
