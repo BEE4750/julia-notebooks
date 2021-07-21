@@ -127,7 +127,7 @@ However, try not to overwrite predefined names! For example, you might not want 
 # ╔═╡ cc87950a-ad98-4cbb-9342-838cb88b9bb2
 md"""
 !!! tip "Overwriting predefined names"
-	In the grand scheme of things, overwriting `π` is not a huge deal unless you want to do some trigonometry. However, there are more important predefined functions and variables that you may want to be aware of. Always check that a variable or function name is not predefined!
+    In the grand scheme of things, overwriting `π` is not a huge deal unless you want to do some trigonometry. However, there are more important predefined functions and variables that you may want to be aware of. Always check that a variable or function name is not predefined!
 """
 
 # ╔═╡ df1d776a-a867-4987-80dc-3e224bd24a1f
@@ -137,8 +137,7 @@ md"""
 Each datum (importantly, *not* the variable which is bound to it) has a [data type](https://docs.julialang.org/en/v1/manual/types/). 
 
 !!! info "Variables and data"
-	
-	Strictly speaking, a variable points to a particular memory address, which holds the information associated with some datum or data. These pieces of memory can be used to store different data as the variable is overwritten. This can be restricted to varying degrees depending on the programming language. In a *statically typed* language like C, the compiler needs to allocate memory based on the data type, and so once a variable is initialized with a given type, this type cannot be changed, even if the data itself can be. In a *dynamically typed* language such as Python, the types associated with variables can be changed, which may mean the variable needs to be assigned to a different piece of memory. This is one reason why compiled (and usually statically-typed) languages are often faster than interpreted (and usually dynamically-typed) languaged.
+    Strictly speaking, a variable points to a particular memory address, which holds the information associated with some datum or data. These pieces of memory can be used to store different data as the variable is overwritten. This can be restricted to varying degrees depending on the programming language. In a *statically typed* language like C, the compiler needs to allocate memory based on the data type, and so once a variable is initialized with a given type, this type cannot be changed, even if the data itself can be. In a *dynamically typed* language such as Python, the types associated with variables can be changed, which may mean the variable needs to be assigned to a different piece of memory. This is one reason why compiled (and usually statically-typed) languages are often faster than interpreted (and usually dynamically-typed) languaged.
 
 Julia is a dynamically-typed language, which means that you do not need to specify the type of a variable when you define it, and you can change types mid-program. However, this does not work in Pluto, as Pluto tries to keep track of variables so it can update all cells in a notebook that refer to that variable when the variable changes upstream.
 
@@ -348,7 +347,7 @@ To access a value, use square brackets and the desired index.
 # ╔═╡ ebab8621-8dff-426e-a781-060defdb5ea5
 md"""
 !!! note "Julia indexing"
-	Julia indexing starts at 1, not 0!
+    Julia indexing starts at 1, not 0!
 """
 
 # ╔═╡ da3107e8-9701-4214-a84b-965c3abd102b
@@ -435,6 +434,24 @@ test_dict = Dict("A"=>1, "B"=>2)
 # ╔═╡ 9830ec09-a403-4bde-abd0-0e7f1d15ca5c
 test_dict["B"]
 
+# ╔═╡ 7cc41416-fdf9-4968-9592-a5982db2c006
+md"""
+### Comprehensions
+
+Creating a data structure with more than a handful of elements can be tedious to do by hand. If your desired array follows a certain pattern, you can create structures using a *comprehension*. Comprehensions iterate over some other data structure (such as an array) implicitly and populate the new data structure based on the specified instructions.
+"""
+
+# ╔═╡ a0037117-0ce9-4ae1-b455-46a8b6d8955b
+[i^2 for i in 0:1:5]
+
+# ╔═╡ d7ebf534-bf06-4d2d-a89e-433956ae2661
+md"""
+For dictionaries, make sure that you also specify the keys.
+"""
+
+# ╔═╡ 3df793c9-ce6c-4b94-9479-db28807c2efa
+Dict(string(i) => i^2 for i in 0:1:5)
+
 # ╔═╡ d92ebe5b-1bab-4551-957b-17c0e0c7b2f7
 md"""
 ## Functions
@@ -458,7 +475,7 @@ my_actual_function(3, 5)
 # ╔═╡ 380d2d34-46f3-4a6d-b3be-421e1a0d9c4e
 md"""
 !!! note "Do you need to "return" values?"
-	Functions in Julia do not require explicit use of a `return` statement. They will return the last expression evaluated in their definition. However, it's good style to explicitly `return` function outputs. This improves readability and debugging, especially when functions can return multiple expressions based on logical control flows (if-then-else blocks).
+    Functions in Julia do not require explicit use of a `return` statement. They will return the last expression evaluated in their definition. However, it's good style to explicitly `return` function outputs. This improves readability and debugging, especially when functions can return multiple expressions based on logical control flows (if-then-else blocks).
 """
 
 # ╔═╡ e329ae2f-4d34-4e21-9cad-d1d7a0a526e6
@@ -480,6 +497,36 @@ end
 
 # ╔═╡ 48b742b3-d3fa-4c0d-9f48-bcd082588b68
 function_of_functions(g, 3, 5)
+
+# ╔═╡ 67232a2c-511e-4d2a-a96e-793828266535
+md"""
+### Short and Anonymous Functions
+
+In addition to the long form of the function definition shown above, simple functions can be specified in more compact forms when helpful.
+"""
+
+# ╔═╡ e74dc74f-132d-42b7-8237-6b88a5299030
+# short form
+h₁(x) = x^2 # make the subscript using \_1 + <TAB>
+
+# ╔═╡ 735358c0-f3fc-494a-ad94-aec1226d7d55
+h₁(4)
+
+# ╔═╡ 3e2b97b1-38e8-47d8-9d1e-5dfd2b6c959e
+# anonymous form
+x->sin(x)
+
+# ╔═╡ 991b5def-6bb2-4206-8912-132b8d435c28
+(x->sin(x))(π/4)
+
+# ╔═╡ 10d7c9bc-935a-47f9-9849-5e912580f725
+md"""
+### Mutating Functions
+
+The convention in Julia is that functions should not modify (or *mutate*) their input data. The reason for this is to ensure that the data is preserved. Mutating functions are mainly appropriate for applications where performance needs to be optimized, and making a copy of the input data would be too memory-intensive.
+
+If you do write a mutating function in Julia, the convention is to add a `!` to its name, like `my_mutating_function!(x)`.
+"""
 
 # ╔═╡ d41b6712-b8ec-48dc-bda4-fbaa04899dcb
 md"""
@@ -510,6 +557,27 @@ Otherwise, we can pass a new value for `c`.
 
 # ╔═╡ e31af3dc-f002-4ec2-a297-d1526ec77257
 setting_optional_arguments(3, 5, 2)
+
+# ╔═╡ ad132189-4da9-4eb5-ac07-46e65d5ef57c
+md"""
+### Passing data structures as arguments
+
+Instead of passing variables individually, it may make sense to pass a data structure, such as an array or a tuple, and then unpacking within the function definition. This is straightforward in long form: access the appropriate elements using their index.
+
+In short or anonymous form, there is a trick which allows the use of readable variables within the function definition.
+"""
+
+# ╔═╡ 60046b51-6e52-44f3-bec7-acd21732e7d0
+h₂((x,y)) = x*y # enclose the input arguments in parentheses to tell Julia to expect and unpack a tuple
+
+# ╔═╡ 6048c6d2-298c-44a5-a13b-e5ed456dbbf8
+h₂((2, 3)) # this works perfectly, as we passed in a tuple
+
+# ╔═╡ 3f5d7421-f090-47dc-9f25-8ae214bee4ab
+h₂(2, 3) # this gives an error, as h₂ expects a single tuple, not two different numeric values
+
+# ╔═╡ ab742b9b-87a9-4933-aa6b-26c10c3e19f1
+h₂([3, 10]) # this also works with arrays instead of tuples
 
 # ╔═╡ 8425452e-3f74-4f9b-b37c-cf75dfe0b4fb
 md"""
@@ -721,7 +789,7 @@ compute_factorial(5)
 # ╔═╡ 5c8b24d3-709a-4451-9381-ab356b713d26
 md"""
 !!! warning
-	While loops can easily turn into infinite loops if the condition is never meaningfully updated. Be careful, and look there if your programs are getting stuck.
+    While loops can easily turn into infinite loops if the condition is never meaningfully updated. Be careful, and look there if your programs are getting stuck.
 """
 
 # ╔═╡ 2d8d97e4-263d-4a1c-aa8b-54c55e23bcb6
@@ -776,6 +844,23 @@ Matrices are defined in Julia as 2d arrays. Unlike basic arrays, matrices need t
 
 # ╔═╡ 3cda8c9a-0765-4a9f-9e76-4dc78a6d4f1c
 test_matrix = [1 2 3; 4 5 6]
+
+# ╔═╡ 63e53734-68f9-4896-bb23-d2ef4574d2c1
+md"""
+You can also specify matrices using spaces and newlines.
+"""
+
+# ╔═╡ e8a3ff88-2fee-463b-936d-9fdd16a23d5b
+test_matrix_2 = [1 2 3
+				 4 5 6]
+
+# ╔═╡ 7feaa210-2bd4-40cd-ab11-9730890dc1ad
+md"""
+Finally, matrices can be created using comprehensions by separating the inputs by a comma.
+"""
+
+# ╔═╡ 7041e3df-957c-42ff-85e4-a48ab6bd5531
+[i*j for i in 1:1:5, j in 1:1:5]
 
 # ╔═╡ 00b26d8b-c094-4113-bfd7-7d1ed0a4d60c
 md"""
@@ -902,6 +987,10 @@ Pluto actually simplifies this! It will automatically download and install `pack
 # ╟─f3bb47e6-f092-4f6d-9623-382f49dcb210
 # ╠═defd917c-4cdd-4cbf-9b67-1d4a7b77dc20
 # ╠═9830ec09-a403-4bde-abd0-0e7f1d15ca5c
+# ╟─7cc41416-fdf9-4968-9592-a5982db2c006
+# ╠═a0037117-0ce9-4ae1-b455-46a8b6d8955b
+# ╟─d7ebf534-bf06-4d2d-a89e-433956ae2661
+# ╠═3df793c9-ce6c-4b94-9479-db28807c2efa
 # ╟─d92ebe5b-1bab-4551-957b-17c0e0c7b2f7
 # ╠═7ae2c996-8659-4d8c-a152-05df7e16b3c7
 # ╠═06cf1e33-df61-4b8a-8858-c6e5e48fa29a
@@ -912,12 +1001,23 @@ Pluto actually simplifies this! It will automatically download and install `pack
 # ╠═32c25b91-c07f-4bd5-aeb1-618b4074b3f1
 # ╠═e0c707e9-3a3f-4550-a96f-f8d7f8ac3034
 # ╠═48b742b3-d3fa-4c0d-9f48-bcd082588b68
+# ╟─67232a2c-511e-4d2a-a96e-793828266535
+# ╠═e74dc74f-132d-42b7-8237-6b88a5299030
+# ╠═735358c0-f3fc-494a-ad94-aec1226d7d55
+# ╠═3e2b97b1-38e8-47d8-9d1e-5dfd2b6c959e
+# ╠═991b5def-6bb2-4206-8912-132b8d435c28
+# ╟─10d7c9bc-935a-47f9-9849-5e912580f725
 # ╟─d41b6712-b8ec-48dc-bda4-fbaa04899dcb
 # ╠═8f56b12a-73f0-494a-8c88-92bed2c30b43
 # ╟─ea8dd689-367b-42fc-95bc-db3a5e92f835
 # ╠═0d41f103-fe98-4772-a74f-ffe6d93c0b0c
 # ╟─d5b56a3a-03b0-483e-82cc-51acc15cefe7
 # ╠═e31af3dc-f002-4ec2-a297-d1526ec77257
+# ╟─ad132189-4da9-4eb5-ac07-46e65d5ef57c
+# ╠═60046b51-6e52-44f3-bec7-acd21732e7d0
+# ╠═6048c6d2-298c-44a5-a13b-e5ed456dbbf8
+# ╠═3f5d7421-f090-47dc-9f25-8ae214bee4ab
+# ╠═ab742b9b-87a9-4933-aa6b-26c10c3e19f1
 # ╟─8425452e-3f74-4f9b-b37c-cf75dfe0b4fb
 # ╠═1f4ee34f-6c79-4fa0-b956-411713a2e2e7
 # ╠═2afc55e3-af2a-4d5a-933a-2c6fb786cac3
@@ -960,7 +1060,7 @@ Pluto actually simplifies this! It will automatically download and install `pack
 # ╟─22a07aab-c644-4267-9be3-9a5d656485a0
 # ╠═8645e18f-bf42-4289-8c50-879f45fb2e99
 # ╠═d54e67fa-7708-4b01-b24c-eceaee66fa39
-# ╟─5c8b24d3-709a-4451-9381-ab356b713d26
+# ╠═5c8b24d3-709a-4451-9381-ab356b713d26
 # ╟─2d8d97e4-263d-4a1c-aa8b-54c55e23bcb6
 # ╟─b2c378f0-0e75-451c-9947-0a9df49bc59d
 # ╠═a427f21b-89d2-4d0d-beeb-0b7508b61ce7
@@ -970,6 +1070,10 @@ Pluto actually simplifies this! It will automatically download and install `pack
 # ╠═f3721f7f-e933-4248-b9b9-ef2fb35758fe
 # ╟─0db862d4-836c-4e43-b0a7-176df6d49911
 # ╠═3cda8c9a-0765-4a9f-9e76-4dc78a6d4f1c
+# ╟─63e53734-68f9-4896-bb23-d2ef4574d2c1
+# ╠═e8a3ff88-2fee-463b-936d-9fdd16a23d5b
+# ╟─7feaa210-2bd4-40cd-ab11-9730890dc1ad
+# ╠═7041e3df-957c-42ff-85e4-a48ab6bd5531
 # ╟─00b26d8b-c094-4113-bfd7-7d1ed0a4d60c
 # ╠═036f6a84-1dac-453e-8be2-73e3ac11d76a
 # ╠═627f3b88-9405-48f5-87e6-c8bbe190e487
