@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.14.7
+# v0.15.1
 
 using Markdown
 using InteractiveUtils
@@ -579,9 +579,42 @@ h₂(2, 3) # this gives an error, as h₂ expects a single tuple, not two differ
 # ╔═╡ ab742b9b-87a9-4933-aa6b-26c10c3e19f1
 h₂([3, 10]) # this also works with arrays instead of tuples
 
+# ╔═╡ 0fafa041-1617-452c-ad64-a90536276881
+md"""
+### Vectorized operations
+
+Julia uses **dot syntax** to vectorize an operation and apply it *element-wise* across an array.
+
+For example, to calculate the square root of 3:
+"""
+
+# ╔═╡ 597a511f-6db4-48dc-9f2c-8cc33d36c239
+sqrt(3)
+
+# ╔═╡ f11810f7-a1cb-4a88-8324-2372ec069ecb
+md"""
+To calculate the square roots of every integer between 1 and 5:
+"""
+
+# ╔═╡ 38cffa0d-c31f-4d51-b11c-7657a97a68df
+sqrt.([1, 2, 3, 4, 5])
+
+# ╔═╡ c8ed98cc-7342-4014-afbb-efbef80f7bc4
+md"""
+The same dot syntax is used for arithmetic operations over arrays, since these operations are really functions.
+"""
+
+# ╔═╡ a3b7bb67-ae07-45c4-b344-cb58955a5497
+[1, 2, 3, 4] .* 2
+
+# ╔═╡ 63fcdd1f-f7a2-4bf4-a961-ddfd81410d37
+md"""
+Vectorization can be faster and is more concise to write and read than applying the same function to multiple variables or objects explicitly, so take advantage!
+"""
+
 # ╔═╡ 8425452e-3f74-4f9b-b37c-cf75dfe0b4fb
 md"""
-## Returning multiple values
+### Returning multiple values
 
 You can return multiple values by separating them with a comma. This implicitly causes the function to return a tuple of values.
 """
@@ -885,7 +918,7 @@ md"""
 Sometimes you might need functionality that does not exist in base Julia. Julia handles packages using the [`Pkg` package manager](https://docs.julialang.org/en/v1/stdlib/Pkg/). After finding a package which has the functions that you need, you have two options:
 
 1. Use the package management prompt in the Julia REPL (the standard Julia interface; what you get when you type `julia` in your terminal). Enter this by typing `]` at the standard green Julia prompt `julia>`. This will become a blue `pkg>`. You can then download and install new packages using `add packagename`. 
-2. From the standard prompt, enter `Pkg.add(packagename)`.
+2. From the standard prompt, enter `using Pkg; Pkg.add(packagename)`.
 
 The `packagename` package can then be used by adding `using packagename` to the start of the script.
 
@@ -1018,6 +1051,13 @@ Pluto actually simplifies this! It will automatically download and install `pack
 # ╠═6048c6d2-298c-44a5-a13b-e5ed456dbbf8
 # ╠═3f5d7421-f090-47dc-9f25-8ae214bee4ab
 # ╠═ab742b9b-87a9-4933-aa6b-26c10c3e19f1
+# ╟─0fafa041-1617-452c-ad64-a90536276881
+# ╠═597a511f-6db4-48dc-9f2c-8cc33d36c239
+# ╟─f11810f7-a1cb-4a88-8324-2372ec069ecb
+# ╠═38cffa0d-c31f-4d51-b11c-7657a97a68df
+# ╟─c8ed98cc-7342-4014-afbb-efbef80f7bc4
+# ╠═a3b7bb67-ae07-45c4-b344-cb58955a5497
+# ╟─63fcdd1f-f7a2-4bf4-a961-ddfd81410d37
 # ╟─8425452e-3f74-4f9b-b37c-cf75dfe0b4fb
 # ╠═1f4ee34f-6c79-4fa0-b956-411713a2e2e7
 # ╠═2afc55e3-af2a-4d5a-933a-2c6fb786cac3
