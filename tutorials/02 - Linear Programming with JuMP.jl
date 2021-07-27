@@ -407,7 +407,7 @@ In this case, the relevant shadow prices are zero because the optimum is in the 
 # ╠═1764d673-5353-41e4-a780-5e037787a391
 # ╟─4136e3f3-4030-4aaf-984d-c472e9a2ff52
 # ╠═0d21918d-5bb0-49b4-8b34-6decbcf4db26
-# ╟─f6a61fcc-9e0b-418d-be53-ca6d56db71f8
+# ╠═f6a61fcc-9e0b-418d-be53-ca6d56db71f8
 # ╟─59f2c440-0af8-4db2-a3f5-da7dd3807c4f
 # ╠═9ac7f3aa-b9ba-4208-ba21-d6cd2219e097
 # ╟─b1307793-e4db-4c8f-8d16-c06cbba4602c
