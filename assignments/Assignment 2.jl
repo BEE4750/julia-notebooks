@@ -38,7 +38,7 @@ Recently, environmental authorities have expressed concern over the pesticide's 
 md"""
 ## Part 1: Problem Formulation
 
-A farmer has *up to* 130 ha that can be planted with the three crops. Formulate a **linear programming model** to determine how many hectares should be planted with each crop and what the optimal pesticide application rates for each crop should be.
+A farmer has *up to* 130 ha that can be planted with the three crops. Formulate a **linear programming model** to determine how many hectares should be planted with each crop and what the optimal pesticide application rates for each crop should be to maximize profit.
 
 !!! warning
     Make sure that your objective function and all constraints are *linear*.
