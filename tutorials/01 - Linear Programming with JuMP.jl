@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.14.7
+# v0.15.1
 
 using Markdown
 using InteractiveUtils
@@ -168,6 +168,17 @@ md"""
 #### 1. Setting Up the Model and Solver
 
 First, we should load `JuMP` and `Clp`.
+"""
+
+# ╔═╡ d1146400-3e16-44b5-9cd4-f08cf273699f
+md"""
+!!! warning "Don't simply modify a defined JuMP model!"
+    A typical way to use these types of notebooks is to repeatedly modify the code within a cell, re-run the cell, and see what changes. Doing this in a cell where a `JuMP` model is defined will cause an error. Instead, if you want to change variable bounds or constraints, use the following:
+
+    * to delete a variable, use [`delete` and `unregister`](https://jump.dev/JuMP.jl/stable/manual/variables/#Delete-a-variable);
+    * to change variable bounds, use [`set_lower_bound`, `set_upper_bound`, `delete_lower_bound`, and `delete_upper_bound`](https://jump.dev/JuMP.jl/stable/manual/variables/#Variable-bounds);
+    * to modify a constraint, see this [section of the JuMP documentation](https://jump.dev/JuMP.jl/stable/manual/constraints/#Modify-a-constraint);
+    * to delete a constraint, use [`delete` and `unregister`](https://jump.dev/JuMP.jl/stable/manual/constraints/#Delete-a-constraint).
 """
 
 # ╔═╡ 5fa89194-2fa1-4fd7-928a-0ffbc2116e44
@@ -403,11 +414,11 @@ In this case, the relevant shadow prices are zero because the optimum is in the 
 # ╟─8eb5fca7-2632-493f-9c0a-c44e55fd2096
 # ╟─2d3f1366-4511-4ad3-ba1b-4d5c3cf460e6
 # ╟─a8436f78-fea8-4cac-a285-9d287e514201
-# ╠═bd7129da-099e-4352-8e8e-694f609c1f54
+# ╟─bd7129da-099e-4352-8e8e-694f609c1f54
 # ╠═1764d673-5353-41e4-a780-5e037787a391
 # ╟─4136e3f3-4030-4aaf-984d-c472e9a2ff52
 # ╠═0d21918d-5bb0-49b4-8b34-6decbcf4db26
-# ╠═f6a61fcc-9e0b-418d-be53-ca6d56db71f8
+# ╟─f6a61fcc-9e0b-418d-be53-ca6d56db71f8
 # ╟─59f2c440-0af8-4db2-a3f5-da7dd3807c4f
 # ╠═9ac7f3aa-b9ba-4208-ba21-d6cd2219e097
 # ╟─b1307793-e4db-4c8f-8d16-c06cbba4602c
@@ -416,6 +427,7 @@ In this case, the relevant shadow prices are zero because the optimum is in the 
 # ╟─2fdc53f1-8bda-4917-ab87-8c7479aba60e
 # ╟─296e5786-3ece-4314-8652-566bc9d2db7b
 # ╠═2331cd27-a102-44c2-af55-686565bf5014
+# ╟─d1146400-3e16-44b5-9cd4-f08cf273699f
 # ╟─5fa89194-2fa1-4fd7-928a-0ffbc2116e44
 # ╠═92fa4f4c-d109-4d60-ae5a-ae9ac429f412
 # ╟─f468455b-b721-4d78-8435-23c844cdec13
