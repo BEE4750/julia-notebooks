@@ -75,9 +75,9 @@ Use this block to clearly state the objective function and constraints for your 
 
 # ╔═╡ b4582de1-2c23-4f71-a1fa-611ec8d35e08
 md"""
-## Part 3: Model Implementation and Solution
+## Part 3: Model Implementation and Analysis
 
-Implement your model in JuMP, optimize, and query any relevant quantities. Feel free to add new cells as needed or desired. Name your model `waste_model`.
+Implement your model as a Julia function, called `waste_model`. Then evaluate your model over a number of different candidate solutions until you've found one that you think is close to optimal.
 
 """
 
@@ -91,7 +91,7 @@ begin
 end
 
 # ╔═╡ 52860769-6f79-405c-891e-750616d958bf
-optimize!(waste_model)
+# use this cell (and any needed additional ones) to evaluate your model and identify an "optimal" solution
 
 # ╔═╡ 24fd9a02-1f45-43b1-951d-ecd4003e754f
 md"""
@@ -103,7 +103,7 @@ md"""
 md"""
 ### Part 4.1: Result Description
 
-Briefly describe the results of your analysis, potentially includeing the final value of the objective function, and if a solution was found (and if so, what it was). What does this solution mean to the decision-maker? Be specific! Discuss what the optimal value(s) of the decision variable(s) mean about the system and recommended strategies.
+Briefly describe the results of your analysis, potentially including the final value of the objective function and your identified solution. How did you set up your numerical experiment? How did you decide you had found a sufficiently good solution? What does this solution mean to the decision-maker? Be specific! Discuss what the "optimal" value(s) of the decision variable(s) mean about the system and recommended strategies.
 
 """
 
