@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.15.1
+# v0.16.0
 
 using Markdown
 using InteractiveUtils
@@ -200,8 +200,11 @@ md"""
 Decision variables ($$x$$ and $$y$$ in this case) in JuMP are defined using the `@variable` macro. The first argument passed to `@variable()` is the model object, in this case, `factory_model`, and the second argument are bounds on that variable, created using `>=` and `<=`. JuMP will interpret the bound specification to obtain the variable name. In this case, our only bounds directly on the variables are the non-negativity constraints.
 """
 
-# ╔═╡ 76dd546d-3b83-4f88-b4e8-a7999c13c6c4
-@variable(factory_model, x >= 0) # define x with the non-negativity and capacity constraints
+# ╔═╡ 6feb7645-f4f1-4050-babb-f76a6e4baaa5
+unregister(factory_model, :x)
+
+# ╔═╡ c77ed8b5-6cc5-4b18-a554-4483125fc516
+unregister(factory_model, :y)
 
 # ╔═╡ 7e21e7b7-2254-4808-b630-14e4c4aabe3e
 @variable(factory_model, y >= 0) # similarly define y
@@ -212,9 +215,6 @@ If we had a free (or unbounded) variable $$z$$, we could declare that variable u
 
 JuMP also requires unique names for each variable, or it will throw an error. This is one place where it's nice that Julia lets us use sub- and superscripts in variable names!
 """
-
-# ╔═╡ 2f3ccf24-f279-43b7-a2d2-4cf54b233e35
-@variable(factory_model, 10 >= x >= 0) # let's try defining x again with different bounds
 
 # ╔═╡ 6a6e50b3-219c-419d-b39d-0dada5d6bd4e
 md"""
@@ -409,11 +409,17 @@ md"""
 In this case, the relevant shadow prices are zero because the optimum is in the interior of the domain. If we had added a strong enough upper bound on the value(s) of one or both of our decision variables (say, x <= 4), then this would be non-zero.
 """
 
+# ╔═╡ 76dd546d-3b83-4f88-b4e8-a7999c13c6c4
+@variable(factory_model, x >= 0) # define x with the non-negativity and capacity constraints
+
+# ╔═╡ 2f3ccf24-f279-43b7-a2d2-4cf54b233e35
+@variable(factory_model, 10 >= x >= 0) # let's try defining x again with different bounds
+
 # ╔═╡ Cell order:
 # ╟─c3ea1a42-eafe-11eb-1cdd-4199d0ecf87e
 # ╟─8eb5fca7-2632-493f-9c0a-c44e55fd2096
 # ╟─2d3f1366-4511-4ad3-ba1b-4d5c3cf460e6
-# ╟─a8436f78-fea8-4cac-a285-9d287e514201
+# ╠═a8436f78-fea8-4cac-a285-9d287e514201
 # ╟─bd7129da-099e-4352-8e8e-694f609c1f54
 # ╠═1764d673-5353-41e4-a780-5e037787a391
 # ╟─4136e3f3-4030-4aaf-984d-c472e9a2ff52
@@ -432,6 +438,8 @@ In this case, the relevant shadow prices are zero because the optimum is in the 
 # ╠═92fa4f4c-d109-4d60-ae5a-ae9ac429f412
 # ╟─f468455b-b721-4d78-8435-23c844cdec13
 # ╟─c642b4dd-c892-42d2-bebf-ce9d22c60d13
+# ╠═6feb7645-f4f1-4050-babb-f76a6e4baaa5
+# ╠═c77ed8b5-6cc5-4b18-a554-4483125fc516
 # ╠═76dd546d-3b83-4f88-b4e8-a7999c13c6c4
 # ╠═7e21e7b7-2254-4808-b630-14e4c4aabe3e
 # ╟─f677ceaf-c2b8-44ad-b610-33684cb97927
