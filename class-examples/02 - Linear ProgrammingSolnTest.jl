@@ -83,6 +83,9 @@ unregister(crud_model, :E)
 # ╔═╡ fcfcb9c3-2e82-4ac6-bc54-916fa71066e0
 @variable(crud_model, E[1:3], lower_bound=0, upper_bound=1) #define E with nonneg constraints
 
+# ╔═╡ 4e7e15c8-3854-4e03-8150-814a974b281f
+
+
 # ╔═╡ ecb79e7f-d965-42ad-8f52-151eb5859e8c
 md"""
 ## Define constraints
@@ -105,6 +108,9 @@ Call your model object to see the specification.
 # ╔═╡ 78f33886-d868-4546-ae8e-a70f755bbe76
 # call the model object
 crud_model
+
+# ╔═╡ 649e253a-ee52-43d4-8a57-d7b7da70e312
+all_variables(crud_model)
 
 # ╔═╡ ed11417a-603f-4a69-a12b-bf2c50dca10b
 md"""
@@ -149,6 +155,9 @@ value.(E[3])
 # ╔═╡ 71cb02c1-4c4a-4716-928d-2e181e90a30c
 objective_value(crud_model)
 
+# ╔═╡ 278a0072-e666-410e-9e7c-02cfcfc8acf1
+value.(E)
+
 # ╔═╡ 5edc3464-aa86-451a-9c42-9657b9729335
 md"""
 # Interpret model results
@@ -161,6 +170,25 @@ md"""
 !!! tip "Reality Check:" 
 Seems reasonable because the value intersects the line for the first factory constraint. I would proceed by checking which other constraints are intersecting, etc.
 """
+
+# ╔═╡ b849e8d3-bdf9-4ddf-86fe-05b018934256
+md"""
+# Check the duals
+
+Discuss what this tells us.
+"""
+
+# ╔═╡ 0d8b28d5-4cbc-4797-9fa0-b9e4adf384d2
+has_duals(crud_model)
+
+# ╔═╡ f9be2685-eca6-417e-9b6d-00c1b6519a43
+shadow_price(factory1)
+
+# ╔═╡ de16682b-7cd6-4aee-b3bf-10e2a9795b77
+shadow_price(factory2)
+
+# ╔═╡ 2c382b14-b13c-4adb-bad4-6d480194ce0a
+shadow_price(factory3)
 
 # ╔═╡ Cell order:
 # ╟─2f2edce8-1872-11ec-32b3-671bc66f8d3b
@@ -175,10 +203,12 @@ Seems reasonable because the value intersects the line for the first factory con
 # ╟─f59a5250-5dc7-4c48-a03c-e19fc524dccb
 # ╠═19343ea5-e13d-478d-85a1-5e13b0bc3c41
 # ╠═fcfcb9c3-2e82-4ac6-bc54-916fa71066e0
+# ╠═4e7e15c8-3854-4e03-8150-814a974b281f
 # ╟─ecb79e7f-d965-42ad-8f52-151eb5859e8c
 # ╠═6f96f93a-5b29-4b31-8cf7-159e93d17a5a
 # ╟─88671baa-52ab-4e72-b74c-e720457f5b89
 # ╠═78f33886-d868-4546-ae8e-a70f755bbe76
+# ╠═649e253a-ee52-43d4-8a57-d7b7da70e312
 # ╟─ed11417a-603f-4a69-a12b-bf2c50dca10b
 # ╠═0ce97251-73b4-4f1f-9b8f-79e4c5b1f920
 # ╟─1ed0272d-367f-4303-9161-0aeb33780556
@@ -190,5 +220,11 @@ Seems reasonable because the value intersects the line for the first factory con
 # ╠═9806d3aa-ccc3-4d85-8e63-08e76dd9bf3a
 # ╠═554f474d-e947-4619-90f6-735bd769382e
 # ╠═71cb02c1-4c4a-4716-928d-2e181e90a30c
+# ╠═278a0072-e666-410e-9e7c-02cfcfc8acf1
 # ╟─5edc3464-aa86-451a-9c42-9657b9729335
 # ╠═26f9ac46-871b-4b27-9256-196b70c9f5ba
+# ╟─b849e8d3-bdf9-4ddf-86fe-05b018934256
+# ╠═0d8b28d5-4cbc-4797-9fa0-b9e4adf384d2
+# ╠═f9be2685-eca6-417e-9b6d-00c1b6519a43
+# ╠═de16682b-7cd6-4aee-b3bf-10e2a9795b77
+# ╠═2c382b14-b13c-4adb-bad4-6d480194ce0a

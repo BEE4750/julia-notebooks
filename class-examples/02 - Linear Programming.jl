@@ -73,7 +73,19 @@ If you make a mistake setting up the constraints, do not change the cell where t
 """
 
 # ╔═╡ fcfcb9c3-2e82-4ac6-bc54-916fa71066e0
+@variable(crud_model, E[1:3] >= 0)
 
+# ╔═╡ 58d20e5c-8940-4142-8f2a-060932418a9d
+set_upper_bound(E[1],1)
+
+# ╔═╡ 3547cbc7-a765-4ffb-836c-e14884b03d55
+set_upper_bound(E[2],1)
+
+# ╔═╡ a557101e-70fd-4b66-8be0-e78ed1188095
+
+
+# ╔═╡ dbb7525f-66a8-4020-a89a-934fa05881ab
+all_variables(crud_model)
 
 # ╔═╡ ecb79e7f-d965-42ad-8f52-151eb5859e8c
 md"""
@@ -146,6 +158,10 @@ Use the cell below to jot down your thoughts about the problem and solution. Doe
 # ╟─db8c1aee-fc85-471e-ad33-d07c37d2a013
 # ╟─f59a5250-5dc7-4c48-a03c-e19fc524dccb
 # ╠═fcfcb9c3-2e82-4ac6-bc54-916fa71066e0
+# ╠═58d20e5c-8940-4142-8f2a-060932418a9d
+# ╠═3547cbc7-a765-4ffb-836c-e14884b03d55
+# ╠═a557101e-70fd-4b66-8be0-e78ed1188095
+# ╠═dbb7525f-66a8-4020-a89a-934fa05881ab
 # ╟─ecb79e7f-d965-42ad-8f52-151eb5859e8c
 # ╠═6f96f93a-5b29-4b31-8cf7-159e93d17a5a
 # ╟─88671baa-52ab-4e72-b74c-e720457f5b89

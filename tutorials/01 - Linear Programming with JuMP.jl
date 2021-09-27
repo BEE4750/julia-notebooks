@@ -206,15 +206,18 @@ unregister(factory_model, :x)
 # ╔═╡ c77ed8b5-6cc5-4b18-a554-4483125fc516
 unregister(factory_model, :y)
 
-# ╔═╡ 7e21e7b7-2254-4808-b630-14e4c4aabe3e
-@variable(factory_model, y >= 0) # similarly define y
-
 # ╔═╡ f677ceaf-c2b8-44ad-b610-33684cb97927
 md"""
 If we had a free (or unbounded) variable $$z$$, we could declare that variable using `@variable(model, z)`.
 
 JuMP also requires unique names for each variable, or it will throw an error. This is one place where it's nice that Julia lets us use sub- and superscripts in variable names!
 """
+
+# ╔═╡ 6ff1aef7-8315-40a1-b3b0-11545fbd6dd0
+
+
+# ╔═╡ c7fcd30d-9fff-4655-a544-ab804ebf0d54
+delete(factory_model, x)
 
 # ╔═╡ 6a6e50b3-219c-419d-b39d-0dada5d6bd4e
 md"""
@@ -409,11 +412,17 @@ md"""
 In this case, the relevant shadow prices are zero because the optimum is in the interior of the domain. If we had added a strong enough upper bound on the value(s) of one or both of our decision variables (say, x <= 4), then this would be non-zero.
 """
 
-# ╔═╡ 76dd546d-3b83-4f88-b4e8-a7999c13c6c4
-@variable(factory_model, x >= 0) # define x with the non-negativity and capacity constraints
+# ╔═╡ 1f7af90e-c283-4d57-a605-7f09104bb4e4
+@variable(factory_model, y >= 0) # similarly define y
+
+# ╔═╡ 7e21e7b7-2254-4808-b630-14e4c4aabe3e
+@variable(factory_model, y >= 0) # similarly define y
 
 # ╔═╡ 2f3ccf24-f279-43b7-a2d2-4cf54b233e35
 @variable(factory_model, 10 >= x >= 0) # let's try defining x again with different bounds
+
+# ╔═╡ 76dd546d-3b83-4f88-b4e8-a7999c13c6c4
+@variable(factory_model, x >= 0) # define x with the non-negativity and capacity constraints
 
 # ╔═╡ Cell order:
 # ╟─c3ea1a42-eafe-11eb-1cdd-4199d0ecf87e
@@ -443,7 +452,10 @@ In this case, the relevant shadow prices are zero because the optimum is in the 
 # ╠═76dd546d-3b83-4f88-b4e8-a7999c13c6c4
 # ╠═7e21e7b7-2254-4808-b630-14e4c4aabe3e
 # ╟─f677ceaf-c2b8-44ad-b610-33684cb97927
+# ╠═c7fcd30d-9fff-4655-a544-ab804ebf0d54
+# ╠═6ff1aef7-8315-40a1-b3b0-11545fbd6dd0
 # ╠═2f3ccf24-f279-43b7-a2d2-4cf54b233e35
+# ╠═1f7af90e-c283-4d57-a605-7f09104bb4e4
 # ╟─6a6e50b3-219c-419d-b39d-0dada5d6bd4e
 # ╟─c7488e87-76b9-4f5c-86d2-6a65876cc6df
 # ╠═ff87c393-227d-452e-ac45-946b909d700d
