@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.16.0
+# v0.16.1
 
 using Markdown
 using InteractiveUtils
@@ -9,6 +9,7 @@ begin
 	import Pkg  # import the Julia package manager
 	Pkg.add("JuMP") # install the JuMP package
 	Pkg.add("Ipopt") # install the Ipopt interface
+	Pkg.update()
 end
 
 # ╔═╡ d64ab580-fbb7-4809-b4e2-5b886f2c558e
