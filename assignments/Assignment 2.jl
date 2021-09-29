@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.15.1
+# v0.16.1
 
 using Markdown
 using InteractiveUtils
@@ -31,7 +31,7 @@ Annual production costs, **excluding pesticide applications**, and selling price
 
 Moreover, pesticide application costs are \$70/ha-yr for any crops at all application rates greater than zero. The demand for each crop is 50,000 kg.
 
-Recently, environmental authorities have expressed concern over the pesticide's ecological impacts and have ruled that a farmer's *average* application rate on corn, soybeans, and wheat cannot exceed 0.6 kg/ha, 0.8 kg/ha, and 0.7 g/ha, respectively.
+Recently, environmental authorities have expressed concern over the pesticide's ecological impacts and have ruled that a farmer's *average* application rate on corn, soybeans, and wheat cannot exceed 0.6 kg/ha, 0.8 kg/ha, and 0.7 kg/ha, respectively.
 """
 
 # ╔═╡ e2c3d306-4364-42bb-815c-629258ae26d9

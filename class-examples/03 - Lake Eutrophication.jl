@@ -20,7 +20,7 @@ md"""
 # Define the model
 ```math
  \begin{align}
-    & \min Z = 77.5 E^{1.55} +35 x_2 + 45 x_3 \\
+    & \min Z = 920E +35 x_2 + 45 x_3 \\
    &\text{subject to} &&\\
     & -  40 E + 2.0 x_1 +1.0 x_2 + 0.70 x_3 & \leq & 470\\
     & x_1 + x_2 + x_3 &=& 3 500 \\
@@ -113,7 +113,7 @@ Run the optimization command and query the variable values.
 # ╔═╡ Cell order:
 # ╠═2f2edce8-1872-11ec-32b3-671bc66f8d3b
 # ╠═d64ab580-fbb7-4809-b4e2-5b886f2c558e
-# ╟─7640589c-56d7-497e-9aa4-74241dd6c560
+# ╠═7640589c-56d7-497e-9aa4-74241dd6c560
 # ╟─51804401-2ff7-4f96-a25a-5f0e59cf4a53
 # ╟─fe8e9c04-4322-4ecd-8a97-9e9e75379e00
 # ╟─6710634d-208b-4f55-9e47-b4e004514a66
