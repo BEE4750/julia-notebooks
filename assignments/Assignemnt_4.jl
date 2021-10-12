@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.15.1
+# v0.16.1
 
 using Markdown
 using InteractiveUtils
@@ -15,14 +15,35 @@ md"""
 
 Two cities are developing a coordinated municipal solid waste (MSW) disposal plan.  Three disposal alternatives are being considered: a landfills (LF), a materials recycling facility (MRF), and a waste-to-energy facility (WTE). 
 
+"""
+
+# ╔═╡ 409babef-def0-49a6-a82f-552e3dfb0a3a
+md"""
+**Table 1**
+"""
+
+# ╔═╡ 4651f993-b5da-4c04-9d0e-2c021b3d2732
+md"""
 | **Disposal Facility** | **Capacity** (Mg/d) | **Fixed cost** (\$/d) | **Tipping Fee ** (\$/Mg) | **Recycling Cost** (\$/Mg) |
 |:-------------:|:------------:|:-------------:|:---------:|:--------------:|
-| Landfill 					| 300 | 2000 | 50 |					   |
+| Landfill 					| 200 | 2000 | 50 |					   |
 | Recycling Facility 		| 350 | 1500 | 7  |45 (per Mg recycled)|
 | Waste-to-Energy Facility  | 150 | 2500 | 60 |					   |
+"""
 
+# ╔═╡ 5f8d6abb-a3a0-4e6b-8f1c-1a191d965e05
+md"""
 Transportation costs are $1.5/Mg-km, and the relative distances between the cities and facilities are provided in the table below. 
+"""
 
+
+# ╔═╡ c3eac03d-ca37-473f-bd8f-db5780506ef6
+md"""
+**Table 2**
+"""
+
+# ╔═╡ 1bbce1ed-5fe7-459e-8cf5-a61220fbbead
+md"""
 | **City/Facility**  | **MRF**  | **Landfill** | **WTE** |
 |:-------------:|:------------:|:-------------:|:-------------:|
 | 1  	  | 5  | 30 | 15 |
@@ -30,8 +51,18 @@ Transportation costs are $1.5/Mg-km, and the relative distances between the citi
 | MRF	  | -  | 32 | 15 |
 | LF	  | 32 | -  | 18 |
 | WTE	  | 15 | 18 | -  |
+"""
+
+# ╔═╡ daba6954-82fd-47d9-8f7a-c649addc3947
+md"""
 The fixed costs associated with the disposal options are incurred only if the particular disposal option is implemented.  The cities produce 100 and 170 Mg/day of solid waste, respectively, with the composition provided in the table below. 
 
+**Table 3**
+"""
+
+
+# ╔═╡ 25229deb-8d84-4e53-b878-f8bf18d236a1
+md"""
 | **Component**  | **% of total mass**  | **Combustion ash** (%) | **MRF Recycling rate** (%) |
 |:-------------------:|:------------:|:-------------:|:-------------:|
 | Food Wastes  	  	  | 15  | 8   | 0   |
@@ -124,7 +155,14 @@ List external resources here.
 # ╔═╡ Cell order:
 # ╠═3f54a71c-06aa-11ec-3712-0dbdbf56b590
 # ╟─daf6f050-6fe5-474b-b83c-bc14870b6efb
-# ╠═43b15cf7-0b54-4873-8ef4-828e63de6a95
+# ╟─409babef-def0-49a6-a82f-552e3dfb0a3a
+# ╟─4651f993-b5da-4c04-9d0e-2c021b3d2732
+# ╟─5f8d6abb-a3a0-4e6b-8f1c-1a191d965e05
+# ╟─c3eac03d-ca37-473f-bd8f-db5780506ef6
+# ╟─1bbce1ed-5fe7-459e-8cf5-a61220fbbead
+# ╟─daba6954-82fd-47d9-8f7a-c649addc3947
+# ╟─25229deb-8d84-4e53-b878-f8bf18d236a1
+# ╟─43b15cf7-0b54-4873-8ef4-828e63de6a95
 # ╠═e1c6bd45-457a-4cac-a295-f16d045caaed
 # ╠═88c6da01-e138-4f6d-9263-61963ec9b962
 # ╠═58cf34d0-a32d-4c38-b766-2d63370ed45b
