@@ -87,14 +87,31 @@ md"""
 Determine an optimal disposal plan for the two cities, using the data provided above.
 """
 
-# ╔═╡ e1c6bd45-457a-4cac-a295-f16d045caaed
+# ╔═╡ 9f1fcbbb-c856-42e9-a53d-fbfd7a0846de
+md"""
+### Part 1.1: Calculate the overall recycling and ash fractions.
+
+"""
+
+# ╔═╡ 5892015d-99ac-45e5-b1fd-1c299a7e620b
+md"""
+Use this block to calculate the overall recycling and ash fractions and report them.
+"""
+
+# ╔═╡ b4bda1ca-25d4-4384-a054-f7a18cd2af29
+md"""
+### Part 1.2: Problem formulation.
+
+"""
+
+# ╔═╡ b1367804-0eb4-46e2-817d-828909703d31
 md"""
 Use this block to derive your problem formulation. This is best done with equations supported by some descriptions.
 """
 
 # ╔═╡ 88c6da01-e138-4f6d-9263-61963ec9b962
 md"""
-Use this block to clearly state the objective function and constraints for your problem in standard form.
+Use this block to clearly state the objective function and constraints for your problem in **standard form**. **DO NOT DELETE THIS CELL**
 """
 
 # ╔═╡ 58cf34d0-a32d-4c38-b766-2d63370ed45b
@@ -116,6 +133,15 @@ end
 # ╔═╡ 2b4129bf-05d8-418e-81cb-fbd165efbc86
 optimize!(waste_allocation)
 
+# ╔═╡ c682b9cf-1c5f-43d3-aa5d-abe34469fc5d
+md"""
+### Part 1.3: Report result and discussion.
+Draw a diagram for the cities and facilites. Make sure to label your waste allocation plan on the edges that connect the cities and facilities. Report the optimal objective value and discuss what the disposal plan mean for the cities. 
+"""
+
+# ╔═╡ a3dc492d-dafc-45c2-878e-26a3405d14a2
+#Draw diagram here
+
 # ╔═╡ c7f37854-93f2-4cac-a209-0278cb0ae496
 md"""
 ## Part 2: Modifiy Your Plan with Carbon Tax 
@@ -134,6 +160,14 @@ end
 
 # ╔═╡ 42d1333c-1bd9-4a09-89bc-140189ac566d
 optimize!(waste_allocation)
+
+# ╔═╡ 9f93623a-8737-421b-80a0-64024efd0fd2
+md"""
+Draw a new diagram to reflect the change of your disposal plan and report objective value.
+"""
+
+# ╔═╡ 0a925c04-966b-4d44-9b98-a6c71774f97f
+#Draw new diagram here
 
 # ╔═╡ 0cbd3384-1ff8-434e-b081-8a0ec326e1a3
 md"""
@@ -163,15 +197,22 @@ List external resources here.
 # ╟─daba6954-82fd-47d9-8f7a-c649addc3947
 # ╟─25229deb-8d84-4e53-b878-f8bf18d236a1
 # ╟─43b15cf7-0b54-4873-8ef4-828e63de6a95
-# ╠═e1c6bd45-457a-4cac-a295-f16d045caaed
+# ╟─9f1fcbbb-c856-42e9-a53d-fbfd7a0846de
+# ╠═5892015d-99ac-45e5-b1fd-1c299a7e620b
+# ╟─b4bda1ca-25d4-4384-a054-f7a18cd2af29
+# ╠═b1367804-0eb4-46e2-817d-828909703d31
 # ╠═88c6da01-e138-4f6d-9263-61963ec9b962
 # ╠═58cf34d0-a32d-4c38-b766-2d63370ed45b
 # ╠═dd2164bf-b47b-434e-ae56-e291ee5ef5c1
 # ╠═e3061b60-5824-4b4f-8143-d6ba2d52444a
 # ╠═2b4129bf-05d8-418e-81cb-fbd165efbc86
+# ╠═c682b9cf-1c5f-43d3-aa5d-abe34469fc5d
+# ╠═a3dc492d-dafc-45c2-878e-26a3405d14a2
 # ╟─c7f37854-93f2-4cac-a209-0278cb0ae496
 # ╠═012d4949-f7fc-4022-a302-6ed9447e5c49
 # ╠═42d1333c-1bd9-4a09-89bc-140189ac566d
+# ╠═9f93623a-8737-421b-80a0-64024efd0fd2
+# ╠═0a925c04-966b-4d44-9b98-a6c71774f97f
 # ╠═0cbd3384-1ff8-434e-b081-8a0ec326e1a3
 # ╠═b979c498-3335-4766-9025-cc402ff91a37
 # ╠═459f424f-3700-4832-a665-c9c5659de2b1
