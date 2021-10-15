@@ -144,7 +144,7 @@ Draw a diagram for the cities and facilites. Make sure to label your waste alloc
 
 # ╔═╡ c7f37854-93f2-4cac-a209-0278cb0ae496
 md"""
-## Part 2: Modifiy Your Plan with Carbon Tax 
+## Part 2: Modify Your Plan with Carbon Tax 
 
 It is projected that in the near future the state will introduce a carbon tax that will increase the cost for transportation and for disposal by incineration. It is estimated that the additional costs for the WTE facility will translate to an increase in tipping fees to 75\$/Mg, and transportation costs will increase to \$2/Mg-km. Discuss how this policy change will influence your recommendation.  
 
@@ -208,7 +208,7 @@ List external resources here.
 # ╠═2b4129bf-05d8-418e-81cb-fbd165efbc86
 # ╠═c682b9cf-1c5f-43d3-aa5d-abe34469fc5d
 # ╠═a3dc492d-dafc-45c2-878e-26a3405d14a2
-# ╟─c7f37854-93f2-4cac-a209-0278cb0ae496
+# ╠═c7f37854-93f2-4cac-a209-0278cb0ae496
 # ╠═012d4949-f7fc-4022-a302-6ed9447e5c49
 # ╠═42d1333c-1bd9-4a09-89bc-140189ac566d
 # ╠═9f93623a-8737-421b-80a0-64024efd0fd2
