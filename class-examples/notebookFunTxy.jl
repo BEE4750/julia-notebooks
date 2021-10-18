@@ -7,9 +7,6 @@ using InteractiveUtils
 # ╔═╡ d370ce54-2c33-11ec-2082-3d2ce5b08f53
 using JuMP, Cbc
 
-# ╔═╡ fb7ed89e-fdef-43e7-b6d8-fe3c3170104f
-
-
 # ╔═╡ 1b33a6e8-6012-4290-9d86-e8daa583ad24
 function calculateTxy(U,H,x,y)
 	a = 156;
@@ -486,7 +483,6 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 
 # ╔═╡ Cell order:
 # ╠═d370ce54-2c33-11ec-2082-3d2ce5b08f53
-# ╠═fb7ed89e-fdef-43e7-b6d8-fe3c3170104f
 # ╠═1b33a6e8-6012-4290-9d86-e8daa583ad24
 # ╠═15c23bdb-c912-4816-85a7-be07969f53dd
 # ╠═4d3f9c80-f074-4b8a-a2af-4ce8aef2ee5a
