@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.16.1
+# v0.16.3
 
 using Markdown
 using InteractiveUtils
@@ -40,6 +40,9 @@ md"""
 Determine how long (in distance) it takes for the DO of the river to recover to the regulated level of 6mg/L if the waste is untreated.
 """
 
+# ╔═╡ 36364b89-de3a-432e-ab7d-642ebb00fcaa
+
+
 # ╔═╡ 9f1fcbbb-c856-42e9-a53d-fbfd7a0846de
 md"""
 ## Part 2
@@ -47,22 +50,22 @@ What is the minimum level of treatment (% removal) for waste stream 2 that will 
 
 """
 
+# ╔═╡ 0cbd3384-1ff8-434e-b081-8a0ec326e1a3
+md"""
+Use this cell to discuss your results. Feel free to add new cells to query any quantities of interest from the model.
+"""
+
 # ╔═╡ b4bda1ca-25d4-4384-a054-f7a18cd2af29
 md"""
 ## Part 3: 
-What is the minimum level of equal treatment (% removal) of the two sources that will ensure that the ``DO`` level never drops below 4 mg/L?
+What is the minimum level of equal treatment (% removal) of the two sources required to ensure that the ``DO`` level never drops below 4 mg/L?
 
 """
 
 # ╔═╡ c682b9cf-1c5f-43d3-aa5d-abe34469fc5d
 md"""
 ## Part 4: 
-If the ``CBOD`` values entering the river upstream are known to vary uniformly between ``\pm 20\%`` of the value given in the table, what is the (approximate) likelihood that the ``DO`` will drop below 4 mg/L under the treatment strategy you proposed for Part 3?
-"""
-
-# ╔═╡ 0cbd3384-1ff8-434e-b081-8a0ec326e1a3
-md"""
-Use this cell to discuss your results. Feel free to add new cells to query any quantities of interest from the model.
+If the ``CBOD`` values entering the river upstream are known to vary uniformly between ``\pm 20\%`` of the value given in the table, what is your estimate for the likelihood that the ``DO`` will drop below 4 mg/L under the treatment strategy you proposed for Part 3?
 """
 
 # ╔═╡ b979c498-3335-4766-9025-cc402ff91a37
@@ -83,9 +86,10 @@ List external resources here.
 # ╟─409babef-def0-49a6-a82f-552e3dfb0a3a
 # ╟─4651f993-b5da-4c04-9d0e-2c021b3d2732
 # ╟─43b15cf7-0b54-4873-8ef4-828e63de6a95
+# ╠═36364b89-de3a-432e-ab7d-642ebb00fcaa
 # ╟─9f1fcbbb-c856-42e9-a53d-fbfd7a0846de
+# ╠═0cbd3384-1ff8-434e-b081-8a0ec326e1a3
 # ╟─b4bda1ca-25d4-4384-a054-f7a18cd2af29
 # ╟─c682b9cf-1c5f-43d3-aa5d-abe34469fc5d
-# ╠═0cbd3384-1ff8-434e-b081-8a0ec326e1a3
 # ╠═b979c498-3335-4766-9025-cc402ff91a37
 # ╠═459f424f-3700-4832-a665-c9c5659de2b1
