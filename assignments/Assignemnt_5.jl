@@ -43,7 +43,7 @@ md"""
 md"""
 ## Part 1
 
-Determine how long (in distance) it takes for the DO of the river to recover to the regulated level of 6mg/L if the waste is untreated.
+Determine how long (in distance) it takes for the DO of the river to recover to the regulated level of 6mg/L after waste stream 2 if the waste is untreated.
 """
 
 # ╔═╡ 36364b89-de3a-432e-ab7d-642ebb00fcaa
@@ -74,7 +74,7 @@ What is the minimum level of equal treatment (% removal) of the two sources requ
 # ╔═╡ c682b9cf-1c5f-43d3-aa5d-abe34469fc5d
 md"""
 ## Part 4: 
-If the ``CBOD`` values entering the river upstream are known to vary uniformly between ``\pm 20\%`` of the value given in the table, what is your estimate for the likelihood that the ``DO`` will drop below 4 mg/L under the treatment strategy you proposed for Part 3?
+If the ``CBOD``  and ``NBOD`` values entering the river inflow are known to vary uniformly between ``[-30\%,20\%]`` of the value given in the table, what is your estimate for the probability that the ``DO`` will drop below 4 mg/L under the treatment strategy you proposed for Part 3?
 """
 
 # ╔═╡ b979c498-3335-4766-9025-cc402ff91a37
@@ -203,13 +203,13 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 # ╟─d1568180-4b89-48af-a57f-292cf122f951
 # ╟─409babef-def0-49a6-a82f-552e3dfb0a3a
 # ╟─4651f993-b5da-4c04-9d0e-2c021b3d2732
-# ╟─43b15cf7-0b54-4873-8ef4-828e63de6a95
+# ╠═43b15cf7-0b54-4873-8ef4-828e63de6a95
 # ╠═36364b89-de3a-432e-ab7d-642ebb00fcaa
 # ╟─9f1fcbbb-c856-42e9-a53d-fbfd7a0846de
 # ╠═0cbd3384-1ff8-434e-b081-8a0ec326e1a3
 # ╟─b4bda1ca-25d4-4384-a054-f7a18cd2af29
 # ╠═bb366047-1b9c-4751-88a7-07bb4bb34745
-# ╟─c682b9cf-1c5f-43d3-aa5d-abe34469fc5d
+# ╠═c682b9cf-1c5f-43d3-aa5d-abe34469fc5d
 # ╠═b979c498-3335-4766-9025-cc402ff91a37
 # ╠═459f424f-3700-4832-a665-c9c5659de2b1
 # ╟─00000000-0000-0000-0000-000000000001
